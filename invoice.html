@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice</title>
+    <style>
+        /* Basic styling for the invoice page */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa; /* Light background for contrast */
+            color: #333; /* Dark text for readability */
+        }
+        .invoice-container {
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            background-color: #fff; /* White background for the invoice */
+            animation: fadeIn 1s; /* Animation for fade-in effect */
+            position: relative; /* Relative positioning for absolute button positioning */
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        h1 {
+            text-align: center;
+            color: #6c757d; /* Gray color for the title */
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        .business-info {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .business-name {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #4e3b31; /* Brown color for business name */
+        }
+        .logo {
+            max-width: 150px; /* Adjust logo size */
+            margin: 10px auto;
+        }
+        .cart-item {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #e9ecef; /* Light border for items */
+            border-radius: 5px;
+            background-color: #f1f1f1; /* Light background for items */
+            transition: transform 0.2s; /* Animation on hover */
+        }
+        .cart-item:hover {
+            transform: scale(1.02); /* Slightly enlarge on hover */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        .total-section {
+            margin-top: 20px;
+            border-top: 2px solid #6c757d; /* Top border for total section */
+            padding-top: 15px;
+        }
+        p {
+            font-size: 1.1em; /* Slightly larger font for better readability */
+        }
+        .amount {
+            font-weight: bold; /* Bold for important amounts */
+            color: #dc3545; /* Red color for amounts */
+        }
+        .thank-you {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #4e3b31; /* Brown color for thank you message */
+            border-top: 2px solid #6c757d; /* Optional top border */
+            padding-top: 15px;
+        }
+        .button-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .button {
+            background-color: #4e3b31; /* Match with product page */
+            color: white; /* White text */
+            border: 2px solid #4e3b31; /* Border color */
+            border-radius: 5px;
+            padding: 10px 20px; /* Consistent padding */
+            margin: 0 10px;
+            font-size: 1em; /* Match font size */
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s; /* Uniform transition */
+        }
+        .button:hover {
+            background-color: #6c757d; /* Lighter on hover */
+            transform: scale(1.05); /* Slight scaling on hover */
+        }
+        @media (max-width: 600px) {
+            .invoice-container {
+                padding: 15px;
+            }
+            h1 {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="invoice-container">
+        <div class="business-info">
+            <h1 class="business-name">The Crochet Cove</h1>
+            <img src="crochetlogo.png" alt="Business Logo" class="logo"> 
+            <p>Email: jevanagrant@gmail.com</p> 
+            <p>Phone: (876) 456-7890</p> 
+        </div>
+        <h2>Invoice</h2>
+        <div id="cartDetails"></div>
+        <div class="total-section">
+            <p><strong>Subtotal:</strong> JMD <span class="amount" id="subtotal"></span></p>
+            <p><strong>Tax (15%):</strong> JMD <span class="amount" id="taxAmount"></span></p>
+            <p><strong>Discount:</strong> -JMD <span class="amount" id="discountAmount"></span></p>
+            <p><strong>Total:</strong> JMD <span class="amount" id="total"></span></p>
+        </div>
+        <div class="thank-you">
+            <p>Thank you for your purchase!</p>
+            <p>We appreciate your business!</p>
+        </div>
+        <div class="button-container">
+            <button class="button" id="cancelButton">Cancel</button>
+            <button class="button" id="exitButton">Exit</button>
+        </div>
+    </div>
+
+    <script>
+        // Retrieve data from localStorage
+        const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+        const subtotal = localStorage.getItem('subtotal');
+        const taxAmount = localStorage.getItem('taxAmount');
+        const discountAmount = localStorage.getItem('discountAmount');
+        const total = localStorage.getItem('total');
+
+        // Display cart items
+        let cartDetails = '';
+        cartItems.forEach(item => {
+            cartDetails += `<div class="cart-item">
+                                <p><strong>${item.name}</strong> - Quantity: ${item.quantity} - Price: JMD ${item.price * item.quantity}</p>
+                            </div>`;
+        });
+        document.getElementById('cartDetails').innerHTML = cartDetails;
+
+        // Display subtotal, tax, discount, and total
+        document.getElementById('subtotal').textContent = subtotal;
+        document.getElementById('taxAmount').textContent = taxAmount;
+        document.getElementById('discountAmount').textContent = discountAmount;
+        document.getElementById('total').textContent = total;
+
+        // Cancel button functionality
+        document.getElementById('cancelButton').addEventListener('click', () => {
+            // Optionally clear the cart or navigate back to the cart page
+            localStorage.removeItem('cartItems'); // Clear cart items
+            alert("Order has been canceled.");
+            window.location.href = "products.html"; // Redirect to the cart page
+        });
+
+        // Exit button functionality
+        document.getElementById('exitButton').addEventListener('click', () => {
+            alert("Exiting...");
+            window.location.href = "products.html";
+        });
+    </script>
+</body>
+</html>
+
+
+

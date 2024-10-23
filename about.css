@@ -1,0 +1,95 @@
+header {
+    background-color: #BC8F8F; /* Light brown */
+    color: #ffffff;
+    padding: 0.001; /* Adjust padding */
+    text-align: center;
+    border-bottom: 5px solid #4e3b31; /* Darker brown border */
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    flex-grow: 10; /* Allow logo to take up available space */
+    text-align: center; /* Center the logo */
+}
+
+.logo img {
+    height: 300px; /* Adjust height for better fit */
+    width: 500px; /* Maintain aspect ratio */
+}
+
+.logo-title {
+    font-style: italic; /* Italic text */
+    margin-right: 20px; /* Space between the title and logo */
+    color: #4e3b31; /* Optional: Change text color */
+    text-align: left
+}
+
+.navbar {
+    display: flex; /* Flexbox layout for navigation links */
+    justify-content: flex-end; /* Aligns items to the right */
+}
+
+.navbar a {
+    text-decoration: none; /* Remove underline */
+    color: #4e3b31; /* Darker link color for better contrast */
+    padding: 10px 20px; /* Adjusted padding for better spacing */
+    border-radius: 5px; /* Rounded corners for links */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+}
+
+.navbar a:hover {
+    background-color: #e0e0e0; /* Background color on hover */
+    color: #4e3b31; /* Change text color on hover for visibility */
+}
+
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #f9f3ec, #e6d6c1); /* Soft gradient */
+}
+
+header {
+    background-color:  #BC8F8F; /* Light brown */
+    color: #ffffff;
+    padding: 0em;
+    text-align: left;
+    border-bottom: 5px solid #4e3b31; /* Darker brown border */
+}
+
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container {
+    padding: 20px; /* Padding for the main content */
+}
+
+h1, h2 {
+    color: #4e3b31; /* Darker brown for headings */
+}
+
+.about-us, .contact {
+    background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white background */
+    border-radius: 8px; /* Rounded corners */
+    padding: 20px; /* Padding for the section */
+    margin-bottom: 20px; /* Space between sections */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+footer {
+    text-align: center; /* Centered text */
+    padding: 10px; /* Padding for the footer */
+    background-color: #4e3b31; /* Darker footer background */
+    color: white; /* White text color */
+}

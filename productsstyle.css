@@ -1,0 +1,307 @@
+header {
+    background-color: #BC8F8F; /* Light brown */
+    color: #ffffff;
+    padding: 0.001; /* Adjust padding */
+    text-align: center;
+    border-bottom: 5px solid #4e3b31; /* Darker brown border */
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    flex-grow: 10; /* Allow logo to take up available space */
+    text-align: center; /* Center the logo */
+}
+
+.logo img {
+    height: 300px; /* Adjust height for better fit */
+    width: 500px; /* Maintain aspect ratio */
+}
+
+.logo-title {
+    font-style: italic; /* Italic text */
+    margin-right: 20px; /* Space between the title and logo */
+    color: #4e3b31; /* Optional: Change text color */
+    text-align: left
+}
+
+.navbar {
+    display: flex; /* Flexbox layout for navigation links */
+    justify-content: flex-end; /* Aligns items to the right */
+}
+
+.navbar a {
+    text-decoration: none; /* Remove underline */
+    color: #4e3b31; /* Darker link color for better contrast */
+    padding: 10px 20px; /* Adjusted padding for better spacing */
+    border-radius: 5px; /* Rounded corners for links */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+}
+
+.navbar a:hover {
+    background-color: #e0e0e0; /* Background color on hover */
+    color: #4e3b31; /* Change text color on hover for visibility */
+}
+
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #f9f3ec, #e6d6c1); /* Soft gradient */
+}
+
+header {
+    background-color:  #BC8F8F; /* Light brown */
+    color: #ffffff;
+    padding: 0em;
+    text-align: left;
+    border-bottom: 5px solid #4e3b31; /* Darker brown border */
+}
+
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.christmas-special {
+    background-color: rgba(242, 217, 217, 0.9); /* Slightly transparent for layering */
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    margin: 30px 0;
+    text-align: center;
+    position: relative;
+    animation: fadeIn 1s ease-in-out; /* Keep the fade-in animation */
+}
+
+.christmas-special img {
+    max-width: 80%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.christmas-special h2 {
+    color: #c0392b; /* Christmas red */
+}
+
+.christmas-special button {
+    background-color: #c0392b; /* Same Christmas red */
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.christmas-special button:hover {
+    background-color: #e74c3c;
+}
+
+
+.christmas-special {
+    animation: fadeIn 1s ease-in-out; /* Fade-in animation */
+}
+
+.christmas-special button {
+    animation: bounce 1s infinite; /* Bounce animation */
+}
+
+.christmas-special {
+    position: relative; /* Position for snowflakes */
+    background-color: #ffcccc; /* Light red background */
+    padding: 30px;
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+    margin: 20px 0; /* Margin for spacing */
+    animation: bounce 1s ease-in-out; /* Bounce animation on entrance */
+}
+
+.christmas-special h2 {
+    color: #a60000; /* Deep red for the title */
+    font-family: 'Georgia', serif; /* Elegant font for a festive feel */
+    font-size: 2em; /* Increase font size */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Text shadow for depth */
+}
+
+.snowflakes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Allow clicks to pass through */
+}
+
+.snowflake {
+    position: absolute;
+    top: -10%; /* Start above the section */
+    color: #ffffff; /* Snowflake color */
+    font-size: 1.5em; /* Size of the snowflake */
+    opacity: 0.8;
+    animation: fall linear infinite; /* Falling animation */
+}
+
+@keyframes fall {
+    0% {
+        transform: translateX(0) translateY(0);
+    }
+    100% {
+        transform: translateX(20px) translateY(100vh); /* End at the bottom */
+    }
+}
+
+/* Create a delay for each snowflake for variation */
+.snowflake:nth-child(1) {
+    left: 10%; /* Random position */
+    animation-duration: 5s; /* Duration of the fall */
+    animation-delay: 0s; /* No delay */
+}
+
+.snowflake:nth-child(2) {
+    left: 25%;
+    animation-duration: 6s;
+    animation-delay: 1s; /* Delay for staggered effect */
+}
+
+.snowflake:nth-child(3) {
+    left: 40%;
+    animation-duration: 7s;
+    animation-delay: 2s;
+}
+
+.snowflake:nth-child(4) {
+    left: 55%;
+    animation-duration: 5.5s;
+    animation-delay: 3s;
+}
+
+.snowflake:nth-child(5) {
+    left: 70%;
+    animation-duration: 6.5s;
+    animation-delay: 4s;
+}
+
+
+
+
+.product-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.product-card {
+    background-color: #ffffff; /* Keep white for contrast */
+    border-radius: 10px; /* More rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Softer shadow */
+    padding: 20px; /* More padding for a spacious feel */
+    transition: transform 0.3s; /* Add a hover effect */
+}
+
+.product-card:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+}
+
+.product-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.product-multiple-images {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.main-image img {
+    width: 300px;
+    height: auto;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.image-gallery {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.image-gallery img {
+    width: 80px;
+    height: auto;
+    cursor: pointer;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    transition: border 0.3s ease;
+}
+
+.image-gallery img:hover {
+    border: 2px solid #c0392b; /* Add a border on hover to indicate selection */
+}
+
+
+.button-container {
+    text-align: center;
+    margin-top: 20px;
+    position: fixed; /* Fixed to the bottom */
+    left: 0; /* Align to the left */
+    right: 0; /* Align to the right */
+    bottom: 0; /* Stick to the bottom */
+    background-color: #f9f3ec; /* Match background */
+    padding: 10px 0; /* Padding for buttons */
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1); /* Optional shadow */
+}
+
+.button-container button {
+    padding: 10px 15px;
+    margin: 0 5px;
+    background-color: #7d5c4f; /* Lighter brown */
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.button-container button:hover {
+    background-color: #4e3b31; /* Dark brown */
+}
+
+footer {
+    background-color: #4e3b31; /* Dark brown */
+    color: #ffffff;
+    text-align: center;
+    padding: 0.00001em 0;
+    position: absolute;
+    width: 40%;
+    bottom: 0;
+}
+
+input[type="number"] {
+    width: 60px; /* Set a fixed width for the quantity box */
+    padding: 5px; /* Add some padding for better touch */
+    border: 2px solid #4e3b31; /* Dark border color */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 16px; /* Increase font size for readability */
+    text-align: center; /* Center the text */
+    transition: border-color 0.3s, background-color 0.3s; /* Smooth transitions */
+}
+
+input[type="number"]:focus {
+    border-color: #c8b7b7; /* Change border color on focus */
+    background-color: #f9f9f9; /* Light background color on focus */
+    outline: none; /* Remove default outline */
+}
